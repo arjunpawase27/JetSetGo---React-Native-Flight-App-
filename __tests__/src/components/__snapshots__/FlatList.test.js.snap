@@ -1,0 +1,401 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FlightFlatList Component renders FlatList correctly with given data 1`] = `
+<RCTScrollView
+  data={
+    [
+      {
+        "id": 1,
+        "name": "Flight 1",
+      },
+      {
+        "id": 2,
+        "name": "Flight 2",
+      },
+      {
+        "id": 3,
+        "name": "Flight 3",
+      },
+    ]
+  }
+  getItem={[Function]}
+  getItemCount={[Function]}
+  keyExtractor={[Function]}
+  onContentSizeChange={[Function]}
+  onLayout={[Function]}
+  onMomentumScrollBegin={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEventThrottle={0.0001}
+  stickyHeaderIndices={[]}
+  testID="flight-flat-list"
+  viewabilityConfigCallbackPairs={[]}
+>
+  <View>
+    <View
+      onFocusCapture={[Function]}
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "backgroundColor": "#fff",
+            "borderRadius": 10,
+            "elevation": 7,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 10,
+            "opacity": 1,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 4,
+              "width": 0,
+            },
+            "shadowOpacity": 0.5,
+            "shadowRadius": 5.84,
+          }
+        }
+        testID="flight-item-touchable"
+      >
+        <View
+          style={
+            {
+              "padding": 15,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#2f4149",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginBottom": 5,
+              }
+            }
+          />
+          <Text
+            style={
+              {
+                "color": "#70a8c0",
+                "fontSize": 16,
+                "marginBottom": 5,
+              }
+            }
+          >
+            undefined -&gt; undefined
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#7bd3f7",
+              "borderBottomRightRadius": 10,
+              "borderTopRightRadius": 10,
+              "justifyContent": "center",
+              "paddingHorizontal": 15,
+              "paddingVertical": 10,
+              "width": 125,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "white",
+                "fontSize": 18,
+                "fontWeight": "bold",
+              }
+            }
+          >
+             ₹
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#70a8c0",
+                "fontSize": 16,
+              }
+            }
+          >
+             Seats
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      onFocusCapture={[Function]}
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "backgroundColor": "#fff",
+            "borderRadius": 10,
+            "elevation": 7,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 10,
+            "opacity": 1,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 4,
+              "width": 0,
+            },
+            "shadowOpacity": 0.5,
+            "shadowRadius": 5.84,
+          }
+        }
+        testID="flight-item-touchable"
+      >
+        <View
+          style={
+            {
+              "padding": 15,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#2f4149",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginBottom": 5,
+              }
+            }
+          />
+          <Text
+            style={
+              {
+                "color": "#70a8c0",
+                "fontSize": 16,
+                "marginBottom": 5,
+              }
+            }
+          >
+            undefined -&gt; undefined
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#7bd3f7",
+              "borderBottomRightRadius": 10,
+              "borderTopRightRadius": 10,
+              "justifyContent": "center",
+              "paddingHorizontal": 15,
+              "paddingVertical": 10,
+              "width": 125,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "white",
+                "fontSize": 18,
+                "fontWeight": "bold",
+              }
+            }
+          >
+             ₹
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#70a8c0",
+                "fontSize": 16,
+              }
+            }
+          >
+             Seats
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      onFocusCapture={[Function]}
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "backgroundColor": "#fff",
+            "borderRadius": 10,
+            "elevation": 7,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 10,
+            "opacity": 1,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 4,
+              "width": 0,
+            },
+            "shadowOpacity": 0.5,
+            "shadowRadius": 5.84,
+          }
+        }
+        testID="flight-item-touchable"
+      >
+        <View
+          style={
+            {
+              "padding": 15,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#2f4149",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginBottom": 5,
+              }
+            }
+          />
+          <Text
+            style={
+              {
+                "color": "#70a8c0",
+                "fontSize": 16,
+                "marginBottom": 5,
+              }
+            }
+          >
+            undefined -&gt; undefined
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#7bd3f7",
+              "borderBottomRightRadius": 10,
+              "borderTopRightRadius": 10,
+              "justifyContent": "center",
+              "paddingHorizontal": 15,
+              "paddingVertical": 10,
+              "width": 125,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "white",
+                "fontSize": 18,
+                "fontWeight": "bold",
+              }
+            }
+          >
+             ₹
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#70a8c0",
+                "fontSize": 16,
+              }
+            }
+          >
+             Seats
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

@@ -47,7 +47,6 @@ const SplashScreen = ({ navigation }) => {
 
     slideIn.start(() => {
      
-      console.log('Slide animation completed');
     });
 
    
@@ -61,9 +60,10 @@ const SplashScreen = ({ navigation }) => {
       <Animated.Image
         source={require('../assets/images/logo.jpg')}
         style={[styles.image, { opacity: fadeAnim }]}
+        testID={"logo-image"}
       />
       <Animated.View style={{ transform: [{ translateX: slideAnim }] }}>
-        <Text style={styles.text}>JetSetGo</Text>
+        <Text style={styles.text} testID='splash-text'>JetSetGo</Text>
       </Animated.View>
     </View>
   );

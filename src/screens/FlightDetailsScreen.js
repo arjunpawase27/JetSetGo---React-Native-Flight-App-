@@ -4,7 +4,6 @@ import { View, Text, StyleSheet, Animated } from 'react-native';
 const FlightDetailsScreen = ({ route }) => {
   const { aircraft, airline, arrivalTime, departureTime, destination, duration, flightNumber, gate, origin, price, seatsAvailable } = route.params;
 
-  // Animation setup
   const animations = useRef([
     new Animated.Value(0),
     new Animated.Value(0),
@@ -26,10 +25,10 @@ const FlightDetailsScreen = ({ route }) => {
           toValue: 1,
           duration: 500,
           useNativeDriver: true,
-          delay: index * 100, // Delay each animation by 100 milliseconds
+          delay: index * 100,
         })
       ));
-      Animated.stagger(100, animationSequence).start(); // Stagger the animations by 100 milliseconds
+      Animated.stagger(100, animationSequence).start();
     };
 
     animateDetails();
@@ -38,6 +37,7 @@ const FlightDetailsScreen = ({ route }) => {
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
+        <View style={styles.innerBox}>
         <Text style={styles.title}>Flight Details</Text>
 
         {[
@@ -58,6 +58,7 @@ const FlightDetailsScreen = ({ route }) => {
             <Text style={styles.detailText}>{detail.value}</Text>
           </Animated.View>
         ))}
+        </View>
       </View>
     </View>
   );
@@ -67,6 +68,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#7bd3f7',
+    
   },
   innerContainer: {
     flex: 1,
@@ -74,6 +76,12 @@ const styles = StyleSheet.create({
     paddingTop: 100,
     backgroundColor: '#f8f9fa',
     borderTopLeftRadius: 1000,
+  },
+  innerBox:{
+    borderRadius:20,
+    borderWidth:2,
+    padding:12,
+    borderColor:"#ced4da"
   },
   title: {
     fontSize: 24,

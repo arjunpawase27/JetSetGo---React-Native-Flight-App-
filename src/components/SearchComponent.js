@@ -29,7 +29,7 @@ const handleClear = ()=>{
        <Image
         source={require('../assets/images/search.jpg')} 
         style={styles.searchIcon}
-      />:<TouchableOpacity onPress={handleClear} >
+      />:<TouchableOpacity onPress={handleClear} testID="cancel-button">
         <Image
         source={require('../assets/images/cancel.jpg')} 
         style={styles.searchIcon}

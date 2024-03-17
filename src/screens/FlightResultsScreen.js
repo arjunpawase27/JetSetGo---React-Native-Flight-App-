@@ -20,10 +20,8 @@ const FlightResultsScreen = () => {
         setFilteredFlights(response.data);
         setLoading(false); 
         setError(null); 
-        console.log("data",response.data);
       })
       .catch(error => {
-        console.error('Error fetching flight data:', error);
         setLoading(false); 
         setError('Something went wrong, please try again later'); 
       });
@@ -32,11 +30,9 @@ const FlightResultsScreen = () => {
   const handleSearch = (searchQuery) => {
     const filtered = flights.filter(flight => flight.airline.toLowerCase().includes(searchQuery.toLowerCase()));
     setFilteredFlights(filtered);
-    console.log(searchQuery,"searchquery");
   };
 
   const handleItemPress =(item)=>{
-    console.log(item);
     navigation.navigate("FlightDetails",item);
   }
 
@@ -91,7 +87,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 48,
     fontWeight: 'bold',
-   // marginTop: 20,
     color: "#0C2D48",
    
     textShadowColor: 'rgba(0, 0, 0, 0.2)', 

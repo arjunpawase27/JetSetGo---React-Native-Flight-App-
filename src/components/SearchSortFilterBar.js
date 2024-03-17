@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Button, StyleSheet, Image, TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet, Image, TouchableOpacity, Text } from 'react-native';
 import SearchComponent from './SearchComponent';
 
 const SearchSortFilterBar = ({ onSort, onClear, onSearch }) => {
@@ -21,7 +21,7 @@ const SearchSortFilterBar = ({ onSort, onClear, onSearch }) => {
     <View style={styles.container}>
       <View style={styles.searchSortContainer}>
         <SearchComponent onSearch={onSearch} />
-        <TouchableOpacity onPress={() => setShowDropdown(!showDropdown)}>
+        <TouchableOpacity onPress={() => setShowDropdown(!showDropdown)} testID="dropdown-icon">
           <View style={styles.icon}>
             <Image
               source={require('../assets/images/sort.jpg')} 
@@ -73,7 +73,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     width: 280,
-    //marginHorizontal: 5,
     gap: 5
   },
   icon: {

@@ -5,7 +5,7 @@ const FlightRenderItem = ({ item, onPress }) => {
     const fromTo = `${item?.origin} -> ${item?.destination}`;
 
     return (
-        <TouchableOpacity onPress={() => onPress(item)} style={styles.flightItem}>
+        <TouchableOpacity onPress={() => onPress(item)} style={styles.flightItem} testID="flight-item-touchable">
             <View style={styles.detailView}>
                 <Text style={styles.airline}>{item.airline}</Text>
                 <Text style={styles.routeText}>{fromTo}</Text>

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchComponent renders correctly 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "borderColor": "#ced4da",
+      "borderRadius": 20,
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "marginBottom": 20,
+      "paddingHorizontal": 10,
+    }
+  }
+>
+  <TextInput
+    onChangeText={[Function]}
+    placeholder="Search by airline"
+    placeholderTextColor="#777"
+    style={
+      {
+        "color": "#495057",
+        "flex": 1,
+        "height": 40,
+        "marginRight": 10,
+      }
+    }
+    value=""
+  />
+  <Image
+    source={
+      {
+        "testUri": "../../../src/assets/images/search.jpg",
+      }
+    }
+  />
+</View>
+`;

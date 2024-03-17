@@ -16,6 +16,7 @@ const FlightFlatList = ({ data, onPressItem }) => {
         <FlightRenderItem item={item} onPress={() => handlePressItem(item)} />
       )}
       keyExtractor={item => item.id.toString()}
+      testID="flight-flat-list"
     />
   );
 };
