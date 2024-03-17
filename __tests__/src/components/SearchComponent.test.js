@@ -31,4 +31,5 @@ describe('SearchComponent', () => {
     expect(input.props.value).toBe('');
     expect(onSearchMock).toHaveBeenCalledWith('');
   });
+  
 });

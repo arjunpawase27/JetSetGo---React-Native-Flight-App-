@@ -28,6 +28,4 @@ describe('FlightFlatList Component', () => {
     expect(flatList.props.renderItem).toBeDefined();
     expect(flatList.props.keyExtractor).toBeDefined();
   });
-
- 
 });

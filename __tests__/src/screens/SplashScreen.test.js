@@ -4,7 +4,6 @@ import SplashScreen from '../../../src/screens/SplashScreen';
 const mockNavigation = {
   replace: jest.fn(),
 };
-
 describe('SplashScreen', () => {
   it('renders and animates correctly', async () => {
     const { getByTestId } = render(<SplashScreen navigation={mockNavigation} />);

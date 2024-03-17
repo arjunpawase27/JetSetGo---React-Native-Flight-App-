@@ -12,8 +12,4 @@ describe('SearchSortFilterBar', () => {
     );
     expect(toJSON()).toMatchSnapshot();
   });
-
- 
-
- 
 });

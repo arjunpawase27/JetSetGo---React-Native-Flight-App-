@@ -40,7 +40,6 @@ describe('FlightRenderItem Component', () => {
     const { getByTestId } = render(
       <FlightRenderItem item={item} onPress={onPressMock} />
     );
-
     const touchableItem = getByTestId('flight-item-touchable');
     fireEvent.press(touchableItem);
     expect(onPressMock).toHaveBeenCalledWith(item);

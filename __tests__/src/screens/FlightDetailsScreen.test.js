@@ -3,7 +3,6 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
 import FlightDetailsScreen from '../../../src/screens/FlightDetailsScreen';
-
 describe('FlightDetailsScreen', () => {
   test('renders correctly', () => {
     const route = {

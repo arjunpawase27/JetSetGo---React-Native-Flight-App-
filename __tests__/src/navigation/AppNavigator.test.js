@@ -6,7 +6,6 @@ import SplashScreen from '../../../src/screens/SplashScreen';
 import FlightResultsScreen from '../../../src/screens/FlightResultsScreen';
 import FlightDetailsScreen from '../../../src/screens/FlightDetailsScreen';
 
-// Mocking the screens for testing purposes
 jest.mock('../../../src/screens/SplashScreen', () => jest.fn());
 jest.mock('../../../src/screens/FlightResultsScreen', () => jest.fn());
 jest.mock('../../../src/screens/FlightDetailsScreen', () => jest.fn());
