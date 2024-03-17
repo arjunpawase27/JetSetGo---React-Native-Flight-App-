@@ -1,30 +1,46 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, StyleSheet, TextInput, Button } from 'react-native';
+import { View, Text, StyleSheet, ActivityIndicator,Image } from 'react-native';
 import axios from 'axios';
+import FlightFlatList from '../components/FlatList';
+import SearchSortFilterBar from '../components/SearchSortFilterBar';
+import { useNavigation } from '@react-navigation/native';
 
 const FlightResultsScreen = () => {
+  const navigation = useNavigation();
   const [flights, setFlights] = useState([]);
   const [filteredFlights, setFilteredFlights] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('price');
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(null); 
 
   useEffect(() => {
     axios.get('https://api.npoint.io/378e02e8e732bb1ac55b')
       .then(response => {
         setFlights(response.data);
         setFilteredFlights(response.data);
+        setLoading(false); 
+        setError(null); 
+        console.log("data",response.data);
       })
       .catch(error => {
         console.error('Error fetching flight data:', error);
+        setLoading(false); 
+        setError('Something went wrong, please try again later'); 
       });
   }, []);
 
-  const handleSearch = () => {
+  const handleSearch = (searchQuery) => {
     const filtered = flights.filter(flight => flight.airline.toLowerCase().includes(searchQuery.toLowerCase()));
     setFilteredFlights(filtered);
+    console.log(searchQuery,"searchquery");
   };
 
-  const handleSort = () => {
+  const handleItemPress =(item)=>{
+    console.log(item);
+    navigation.navigate("FlightDetails",item);
+  }
+
+  const handleSort = (sortBy) => {
     const sorted = [...filteredFlights].sort((a, b) => {
       if (sortBy === 'price') {
         return a.price - b.price;
@@ -36,43 +52,24 @@ const FlightResultsScreen = () => {
   };
 
   const handleClear = () => {
-    setSearchQuery('');
-    setSortBy('price');
     setFilteredFlights(flights);
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Flight Results</Text>
-      <View style={styles.searchSortContainer}>
-        <TextInput
-          style={styles.searchInput}
-          onChangeText={text => setSearchQuery(text)}
-          value={searchQuery}
-          placeholder="Search by airline"
-          placeholderTextColor="#777"
-        />
-        <View style={styles.buttonsContainer}>
-          <Button title="Search" onPress={handleSearch} color="#007bff" />
-          <Button title="Sort by Price" onPress={() => {setSortBy('price');handleSort();}} color="#28a745"  />
-          <Button title="Sort by Airline" onPress={() => {setSortBy('airline');handleSort();}} color="#dc3545" />
-          
-        </View>
-        <View style={styles.clearButton}>
-        <Button title="Clear Search & Sort" onPress={handleClear} color="#6c757d" />
-        </View>
-      </View>
-      <FlatList
-        data={filteredFlights}
-        renderItem={({ item }) => (
-          <View style={styles.flightItem}>
-            <Text style={styles.airline}>{item.airline}</Text>
-            <Text style={styles.price}>Price: {item.price}</Text>
-            {/* Render other flight details */}
-          </View>
+      <View style={styles.innerContainer}>
+        
+      <Text style={styles.title}>JetSetGo</Text>
+        <Text style={styles.subTitle}>Elevating Your Flight Experience!</Text>
+        <SearchSortFilterBar onSearch={handleSearch} onSort={handleSort} onClear={handleClear} />
+        {loading ? ( 
+          <ActivityIndicator size="large" color="#7bd3f7" style={styles.loader} />
+        ) : error ? (
+          <Text style={styles.error}>{error}</Text>
+        ) : (
+          <FlightFlatList data={filteredFlights} onPressItem={handleItemPress} />
         )}
-        keyExtractor={item => item.id.toString()}
-      />
+      </View>
     </View>
   );
 };
@@ -80,58 +77,44 @@ const FlightResultsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#7bd3f7',
+    flexDirection:"row"
+  },
+  innerContainer: {
+    flex: 1,
     padding: 10,
-    paddingTop:100,
-    backgroundColor: '#f8f9fa',
-    borderTopLeftRadius:200
+    paddingTop: 20,
+    backgroundColor: 'white',
+    borderTopLeftRadius: 1000,
+    paddingHorizontal:16
   },
   title: {
-    fontSize: 24,
+    fontSize: 48,
+    fontWeight: 'bold',
+   // marginTop: 20,
+    color: "#0C2D48",
+   
+    textShadowColor: 'rgba(0, 0, 0, 0.2)', 
+    textShadowOffset: { width: 3, height: 2 }, 
+    textShadowRadius: 7,
+  },
+  subTitle:{
+    fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 20,
     color: '#343a40',
   },
-  searchSortContainer: {
-    marginBottom: 20,
+  loader: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  searchInput: {
-    marginRight: 10,
-    height: 40,
-    borderColor: '#ced4da',
-    borderWidth: 1,
-    paddingHorizontal: 10,
-    borderRadius: 5,
-    color: '#495057',
-  },
-  buttonsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  clearButton: {
-    marginVertical:20
-  
-  },
-  flightItem: {
-    marginBottom: 10,
-    padding: 15,
-    backgroundColor: '#fff',
-    borderRadius: 10,
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-  },
-  airline: {
+  error: {
+    textAlign: 'center',
     fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 5,
-    color: '#007bff',
+    color: 'red',
   },
-  price: {
-    fontSize: 16,
-    color: '#28a745',
-  },
+ 
 });
 
 export default FlightResultsScreen;

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { View, Image, Text, StyleSheet, Animated } from 'react-native';
+import { View,Text, StyleSheet, Animated } from 'react-native';
 
 const SplashScreen = ({ navigation }) => {
   const fadeAnim = useRef(new Animated.Value(0)).current; 
@@ -42,7 +42,7 @@ const SplashScreen = ({ navigation }) => {
     ]);
 
     sequence.start(() => {
-      navigation.replace('TravelRequest');
+      navigation.replace('FlightResults');
     });
 
     slideIn.start(() => {

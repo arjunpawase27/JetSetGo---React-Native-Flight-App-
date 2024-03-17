@@ -1,10 +1,9 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import TravelRequestScreen from '../screens/TravelRequestScreen';
 import FlightResultsScreen from '../screens/FlightResultsScreen';
 import SplashScreen from '../screens/SplashScreen';
-
+import FlightDetailsScreen from '../screens/FlightDetailsScreen';
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
@@ -16,19 +15,16 @@ const AppNavigator = () => {
           component={SplashScreen}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="TravelRequest"
-          component={TravelRequestScreen}
-          options={{
-            title: 'Travel Request',
-            headerShown: false,
-            animationEnabled: true
-          }}
-        />
+       
         <Stack.Screen
           name="FlightResults"
           component={FlightResultsScreen}
-          options={{ title: 'Flight Results' }}
+          options={{ title: 'Flight Results', headerShown: false }}
+        />
+         <Stack.Screen
+          name="FlightDetails"
+          component={FlightDetailsScreen}
+          options={{ title: 'Flight Details', headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
